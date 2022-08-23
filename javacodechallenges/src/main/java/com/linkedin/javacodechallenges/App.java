@@ -5,8 +5,18 @@ import java.util.Scanner;
 public class App {
 
     public static double calculateWaterBill(double gallonsUsage) {
-        // TODO: Implement method
-        return 0;
+        double minimumWaterBill = 18.84;
+        double numberOfGallonsInCCF = 748;
+        double includedGallons = 2 * numberOfGallonsInCCF;
+
+        if (gallonsUsage <= includedGallons) {
+            return minimumWaterBill;
+        } else {
+            double extraGallonsUsed = gallonsUsage - includedGallons;
+            double extraAmountOwed = Math.ceil(extraGallonsUsed / 
+                numberOfGallonsInCCF) * 3.9;
+            return minimumWaterBill + extraAmountOwed;
+        }
     }
 
     public static void main(String[] args) {
