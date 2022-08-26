@@ -1,9 +1,7 @@
 package com.linkedin.javacodechallenges;
 
-/**
- * Hello world!
- *
- */
+import java.util.Scanner;
+
 public class App 
 {
     public static void redactTextFile(String fileName,
@@ -27,5 +25,7 @@ public class App
         String[] redactedWordsList = redactedWords.split(",");
 
         redactTextFile(fileName, redactedWordsList);
+
+        scanner.close();
     }
 }
