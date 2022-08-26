@@ -13,7 +13,8 @@ public class App {
 
     public static Optional<String> parseJoke(String responseBody) {
         try {
-            JokeResponse jokeResponse = new Gson().fromJson(responseBody, JokeResponse.class);
+            JokeResponse jokeResponse = new Gson().fromJson(responseBody,
+                    JokeResponse.class);
             String joke = jokeResponse.getJoke();
             if (joke != null) {
                 return Optional.of(jokeResponse.getJoke());
@@ -25,7 +26,8 @@ public class App {
         }
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException,
+            InterruptedException {
         // Create a client
         var client = HttpClient.newHttpClient();
 
