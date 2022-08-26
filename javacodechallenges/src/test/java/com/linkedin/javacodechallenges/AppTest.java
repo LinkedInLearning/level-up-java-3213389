@@ -30,7 +30,7 @@ public class AppTest {
 
     @Test
     public void parseJoke() {
-        Optional<String> jokeOpt = App.parseJoke("[{\"id\":\"abc\",\"status\":200,\"joke\":\"" + JOKE + "\"}]");
+        Optional<String> jokeOpt = App.parseJoke("{\"id\":\"abc\",\"status\":200,\"joke\":\"" + JOKE + "\"}");
         assertTrue(jokeOpt.isPresent());
         assertEquals(JOKE, jokeOpt.get());
     }
