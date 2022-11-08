@@ -1,5 +1,5 @@
 # Level Up: Java 
-This is the repository for the LinkedIn Learning course Level Up: Java . The full course is available from [LinkedIn Learning][lil-course-url].
+This is the repository for the LinkedIn Learning course Level Up: Java. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ![Level Up: Java ][lil-thumbnail-url]
 
@@ -12,5 +12,5 @@ Kathryn Hodge
 Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/kathryn-hodge?u=104).
 
 [lil-course-url]: https://www.linkedin.com/learning/level-up-java
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/C560DAQFQ9eV1nZsIMw/learning-public-crop_675_1200/0/1666205199981?e=1667955600&v=beta&t=vz7asxsabl_GSM_vjpo3EpLv3r_tXiSqSheMlNfdkaE
+[lil-thumbnail-url]: https://cdn.lynda.com/course/3213389/3213389-1667864430381-16x9.jpg
 [gcs-video-url]: https://www.linkedin.com/learning/level-up-java/using-github-codespaces-with-this-course
