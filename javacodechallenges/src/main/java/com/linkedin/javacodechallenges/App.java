@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class App {
     public static boolean isEven(int n) {
         // todo: implement functionality
-        return false;
+        return n%2==0 ? true : false;
     }
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
