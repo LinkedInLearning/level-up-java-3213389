@@ -2,6 +2,7 @@ package com.linkedin.javacodechallenges;
 
 import java.util.Map;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class App {
     public static final Map<Character, Integer> letterPoints = Map.ofEntries(Map.entry('A', 1),
@@ -14,7 +15,34 @@ public class App {
             Map.entry('Z', 10));
 
     public static int wordScoreCalculator(String word) {
-        return 0;
+        int score = 0;
+        char[] wordChars = word.toUpperCase().toCharArray();
+        for (Character c:wordChars){
+            int letterPoint = letterPoints.entrySet().stream()
+            .filter(entry -> entry.getKey().equals(c))
+            .map(entry -> entry.getValue())
+            .findFirst()
+            .orElse(0);
+            score += letterPoint;
+        }
+        return score;
+    }
+
+    public static int lettersCalculatorVersion2(String word){
+        AtomicInteger score = new AtomicInteger(0);
+
+        word.toUpperCase().chars()
+        .filter(Character::isAlphabetic)
+        //containsKey() should contain an object, not integer
+        .mapToObj(letter -> (char) letter)
+        .forEachOrdered(letter -> {
+            if (letterPoints.containsKey(letter)){
+                score.getAndAdd(letterPoints.get(letter));
+            }else{
+                System.out.println("Looks like we need to add "+ letter + "to the list");
+            }
+        });
+        return score.getPlain();
     }
 
     public static void main(String[] args) {
@@ -23,7 +51,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         String word = sc.nextLine();
         System.out.println("Your word " + word + " will earn "
-                + wordScoreCalculator(word));
+                + lettersCalculatorVersion2(word));
         sc.close();
     }
 
